@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6bdfa5bda673f4c9f9d447c1f790ba, type: 3}
+  m_Name: BaseEnemyDecisionTree
+  m_EditorClassIdentifier: 
+  rootNode:
+    rid: 5949859324358295552
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 5949859324358295552
+      type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
+      data:
+        question: {fileID: 11400000, guid: d5191b626c20d7240b2a2dff312c16ad, type: 2}
+        trueNode:
+          rid: 5949859324358295561
+        falseNode:
+          rid: 5949859324358295560
+        action: {fileID: 0}
+        editorPosition: {x: 456.4183, y: 171.1014}
+    - rid: 5949859324358295560
+      type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
+      data:
+        question: {fileID: 0}
+        trueNode:
+          rid: -2
+        falseNode:
+          rid: -2
+        action: {fileID: 11400000, guid: 0d9f9383ae8aa2143a5da55efe8e75cd, type: 2}
+        editorPosition: {x: 621.3424, y: 315.89328}
+    - rid: 5949859324358295561
+      type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
+      data:
+        question: {fileID: 11400000, guid: db1b42d7f825a2c469a02ec171e94330, type: 2}
+        trueNode:
+          rid: 5949859324358295563
+        falseNode:
+          rid: 5949859324358295562
+        action: {fileID: 0}
+        editorPosition: {x: 268.5044, y: 315.89328}
+    - rid: 5949859324358295562
+      type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
+      data:
+        question: {fileID: 0}
+        trueNode:
+          rid: -2
+        falseNode:
+          rid: -2
+        action: {fileID: 11400000, guid: 9a55dfe4d9f77b54bbd12b0545f3ad5d, type: 2}
+        editorPosition: {x: 405.47894, y: 488.41168}
+    - rid: 5949859324358295563
+      type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
+      data:
+        question: {fileID: 11400000, guid: fb96505197502984ca499b5d5040eece, type: 2}
+        trueNode:
+          rid: 5949859324358295564
+        falseNode:
+          rid: 5949859324358295565
+        action: {fileID: 0}
+        editorPosition: {x: 108.98868, y: 479.74246}
+    - rid: 5949859324358295564
+      type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
+      data:
+        question: {fileID: 0}
+        trueNode:
+          rid: -2
+        falseNode:
+          rid: -2
+        action: {fileID: 11400000, guid: bf129c3813ad6eb4da31ece748bed49c, type: 2}
+        editorPosition: {x: -41.7287, y: 653.40924}
+    - rid: 5949859324358295565
+      type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
+      data:
+        question: {fileID: 0}
+        trueNode:
+          rid: -2
+        falseNode:
+          rid: -2
+        action: {fileID: 11400000, guid: 3432756440a6cad4c9c782ab7548fc7f, type: 2}
+        editorPosition: {x: 218.99857, y: 658.2668}
