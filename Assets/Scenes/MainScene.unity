@@ -6199,7 +6199,7 @@ GameObject:
   - component: {fileID: 507340175}
   - component: {fileID: 507340179}
   - component: {fileID: 507340180}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12009,6 +12009,7 @@ GameObject:
   - component: {fileID: 849688711}
   - component: {fileID: 849688712}
   - component: {fileID: 849688713}
+  - component: {fileID: 849688714}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -12095,6 +12096,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeAsset: {fileID: 11400000, guid: cab2aeac061f61e46884c6e83de87292, type: 2}
+--- !u!114 &849688714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849688709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24d959d762a24d4e8d61f17a8814c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statesData:
+  - actualState: 0
+    transitions: 01000000
+  - actualState: 1
+    transitions: 000000000200000003000000
+  - actualState: 2
+    transitions: 000000000100000003000000
+  - actualState: 3
+    transitions: 000000000100000002000000
+  initialState: 0
+  tba: 5
+  attackRange: 2
+  waypoints:
+  - {fileID: 473218856}
+  - {fileID: 774703313}
+  - {fileID: 1458311330}
+  - {fileID: 1899074357}
+  speed: 5
+  searchRadius: 7
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &849962012
 PrefabInstance:
   m_ObjectHideFlags: 0

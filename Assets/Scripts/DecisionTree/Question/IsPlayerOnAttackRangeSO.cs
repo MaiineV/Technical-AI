@@ -1,3 +1,5 @@
+using System.Linq;
+using AI;
 using UnityEngine;
 
 namespace DecisionTree.Question
@@ -5,10 +7,9 @@ namespace DecisionTree.Question
     [CreateAssetMenu(fileName = "IsPlayerOnAttackRange", menuName = "Decision Tree/Question Nodes/IsPlayerOnAttackRange")]
     public class IsPlayerOnAttackRangeSO : BaseDecisionQuestionSO
     {
-        public override bool MakeQuestion()
+        public override bool MakeQuestion(Agent agent)
         {
-            Debug.Log("AttackRange Question");
-            return true;
+            return agent.Target && Vector3.Distance(agent.transform.position, agent.Target.transform.position) < agent.AttackRange;
         }
     }
 }

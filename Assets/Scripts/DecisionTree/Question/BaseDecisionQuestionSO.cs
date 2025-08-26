@@ -1,7 +1,7 @@
+using AI;
 using DecisionTree;
-using UnityEngine;
 
 public abstract class BaseDecisionQuestionSO : BaseDecisionNodeSO
 {
-    public abstract bool MakeQuestion();
+    public abstract bool MakeQuestion(Agent agent);
 }

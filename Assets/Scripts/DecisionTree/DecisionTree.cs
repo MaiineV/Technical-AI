@@ -1,4 +1,5 @@
 using System;
+using AI;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -16,27 +17,32 @@ namespace DecisionTree
         [SerializeField] public Vector2 editorPosition;
     }
     
+    [RequireComponent(typeof(Agent))]
     public class DecisionTree : MonoBehaviour
     {
         [SerializeField] private DecisionTreeAsset treeAsset;
         private DecisionNode _currentNode;
+        
+        private Agent _agent;
+
+        private void Awake()
+        {
+            _agent = GetComponent<Agent>();
+        }
 
         private void Start()
         {
-            Debug.Log("Starting Decision Tree");
             if (treeAsset != null)
             {
                 _currentNode = treeAsset.rootNode;
             }
-            
-            ExecuteNode(_currentNode);
         }
 
         private void Update()
         {
             if (_currentNode == null) return;
             
-            
+            ExecuteNode(_currentNode);
         }
         
         private void ExecuteNode(DecisionNode node)
@@ -45,7 +51,7 @@ namespace DecisionTree
             
             if (node.question)
             {
-                var result = node.question.MakeQuestion();
+                var result = node.question.MakeQuestion(_agent);
                 var nextNode = result ? node.trueNode : node.falseNode;
                 
                 if (nextNode != null)
@@ -55,7 +61,7 @@ namespace DecisionTree
             }
             else if (node.action)
             {
-                node.action.ExecuteAction();
+                node.action.ExecuteAction(_agent);
             }
         }
     }
