@@ -43,6 +43,7 @@ namespace AI
         private void Awake()
         {
             FsmComponent = new FSMComponent(statesData, this, initialState);
+            CurrentTba = tba;
         }
 
         public void ChangeState(StateType newState)

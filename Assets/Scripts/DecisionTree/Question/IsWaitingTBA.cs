@@ -9,7 +9,7 @@ namespace DecisionTree.Question
     {
         public override bool MakeQuestion(Agent agent)
         {
-            return agent.CurrentTba > agent.Tba;
+            return agent.CurrentTba < agent.Tba;
         }
     }
 }
