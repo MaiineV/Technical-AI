@@ -9,11 +9,6 @@ namespace AI.States
         {
         }
 
-        public override void OnEnter()
-        {
-            //TODO: Animation
-        }
-
         public override void OnUpdate()
         {
             var dir = Agent.Target.transform.position - Agent.transform.position;

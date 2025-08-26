@@ -11,7 +11,6 @@ namespace AI.States
 
         public override void OnEnter()
         {
-            //TODO: Anim
             Agent.CurrentTba = 0;
         }
 
