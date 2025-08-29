@@ -130,7 +130,7 @@ namespace Pathfinding
             var watchdog = watchdogValue;
             var loopsUntilLazy = 300;
 
-            while (!OnSight(_actualNode.transform.position, _targetNode.transform.position, obstacleMask) && watchdog > 0)
+            while (!LineOfSight(_actualNode.transform.position, _targetNode.transform.position, obstacleMask) && watchdog > 0)
             {
                 watchdog--;
                 loopsUntilLazy--;
@@ -204,7 +204,7 @@ namespace Pathfinding
             }
 
             var watchdog = watchdogValue;
-            while (!OnSight(_actualNode.transform.position, _origenNode.transform.position, obstacleMask)
+            while (!LineOfSight(_actualNode.transform.position, _origenNode.transform.position, obstacleMask)
                    && watchdog > 0)
             {
                 if (Mathf.Abs(_actualNode.transform.position.y - previousNode.transform.position.y) > .1f)
@@ -218,7 +218,7 @@ namespace Pathfinding
                 watchdog--;
 
                 if (previousNode.previousNode &&
-                    OnSight(_actualNode.transform.position, previousNode.previousNode.transform.position, obstacleMask))
+                    LineOfSight(_actualNode.transform.position, previousNode.previousNode.transform.position, obstacleMask))
                 {
                     previousNode = previousNode.previousNode;
                 }
@@ -241,7 +241,7 @@ namespace Pathfinding
         {
             var actualSearchingRange = searchingRange;
             var closestNodes = Physics.OverlapSphere(t, actualSearchingRange, nodeMask)
-                .Where(x => OnSight(t, x.transform.position, obstacleMask));
+                .Where(x => LineOfSight(t, x.transform.position, obstacleMask));
 
             var watchdog = 100;
             while (!closestNodes.Any())
@@ -254,17 +254,27 @@ namespace Pathfinding
 
                 actualSearchingRange += searchingRange;
                 closestNodes = Physics.OverlapSphere(t, actualSearchingRange, nodeMask)
-                    .Where(x => OnSight(t, x.transform.position, obstacleMask));
+                    .Where(x => LineOfSight(t, x.transform.position, obstacleMask));
             }
 
             return closestNodes.OrderBy(x => Vector3.Distance(t, x.transform.position)).First().GetComponent<Node>();
         }
 
-        public static bool OnSight(Vector3 from, Vector3 to, LayerMask mask)
+        public static bool LineOfSight(Vector3 from, Vector3 to, LayerMask mask)
         {
             var dir = to - from;
 
             return !Physics.Raycast(from, dir, dir.magnitude, mask);
+        }
+        
+        public static bool FieldOfView(Transform from, Transform to, float viewAngle, LayerMask obstacleMask)
+        {
+            var forward = from.forward;
+            var dir = to.position - from.position;
+
+            var angle = Vector3.Angle(forward, dir);
+
+            return angle < viewAngle / 2 && LineOfSight(from.position, to.position, obstacleMask);
         }
     }
 }

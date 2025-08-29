@@ -31,6 +31,8 @@ namespace AI
         public float Speed => speed;
 
         [Header("Searching Variables")]
+        [SerializeField] private float fieldOfView;
+        public float FieldOfView => fieldOfView;
         [SerializeField] private float searchRadius;
         public float SearchRadius => searchRadius;
         [SerializeField] private LayerMask targetLayer;
@@ -39,6 +41,9 @@ namespace AI
         public LayerMask ObstacleLayer => obstacleLayer;
         
         public StateType CurrentState => FsmComponent.CurrentState;
+        
+        [SerializeField] private Animator animator;
+        public Animator Animator => animator;
 
         private void Awake()
         {

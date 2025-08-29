@@ -13,8 +13,8 @@ namespace DecisionTree.Question
                 Physics.OverlapSphere(agent.transform.position, agent.SearchRadius, agent.TargetLayer);
             
             return closestPlayer.Any() && 
-                   Pathfinding.Pathfinding.OnSight(closestPlayer[0].transform.position, 
-                       agent.transform.position, agent.ObstacleLayer);
+                   Pathfinding.Pathfinding.FieldOfView(closestPlayer[0].transform, 
+                       agent.transform, agent.FieldOfView, agent.ObstacleLayer);
         }
     }
 }

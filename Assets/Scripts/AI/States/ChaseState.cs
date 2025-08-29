@@ -9,11 +9,17 @@ namespace AI.States
         {
         }
 
+        public override void OnEnter()
+        {
+            Debug.Log($"{Agent.CurrentTba} + {Agent.Tba}");
+            Agent.Animator.SetBool("IsChasing", true);
+        }
+
         public override void OnUpdate()
         {
             var dir = Agent.Target.transform.position - Agent.transform.position;
             Agent.transform.forward = dir;
-            Agent.transform.position += dir.normalized * Agent.Speed * Time.deltaTime;
+            Agent.transform.position += dir.normalized * (Agent.Speed * Time.deltaTime);
         }
     }
 }

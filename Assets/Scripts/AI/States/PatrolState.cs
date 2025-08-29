@@ -18,7 +18,9 @@ namespace AI.States
 
         public override void OnEnter()
         {
-            if (Pathfinding.Pathfinding.OnSight(Agent.Waypoints[_actualIndex].position, Agent.transform.position,
+            Agent.Animator.SetBool("IsChasing", false);
+            
+            if (Pathfinding.Pathfinding.LineOfSight(Agent.Waypoints[_actualIndex].position, Agent.transform.position,
                     Agent.ObstacleLayer)) return;
 
             Pathfinding.Pathfinding.Instance.RequestPath(Agent.transform.position,

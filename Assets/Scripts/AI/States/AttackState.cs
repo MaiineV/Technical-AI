@@ -11,6 +11,7 @@ namespace AI.States
 
         public override void OnEnter()
         {
+            Agent.Animator.SetTrigger("Attack");
             Agent.CurrentTba = 0;
         }
 

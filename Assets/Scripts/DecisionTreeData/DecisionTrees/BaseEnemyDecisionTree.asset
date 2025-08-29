@@ -22,33 +22,23 @@ MonoBehaviour:
     - rid: 5949859324358295552
       type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
       data:
-        question: {fileID: 11400000, guid: d5191b626c20d7240b2a2dff312c16ad, type: 2}
+        question: {fileID: 11400000, guid: fb96505197502984ca499b5d5040eece, type: 2}
         trueNode:
+          rid: 5949859401100165120
+        falseNode:
           rid: 5949859324358295561
-        falseNode:
-          rid: 5949859324358295560
         action: {fileID: 0}
-        editorPosition: {x: 456.4183, y: 171.1014}
-    - rid: 5949859324358295560
-      type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
-      data:
-        question: {fileID: 0}
-        trueNode:
-          rid: -2
-        falseNode:
-          rid: -2
-        action: {fileID: 11400000, guid: 0d9f9383ae8aa2143a5da55efe8e75cd, type: 2}
-        editorPosition: {x: 621.3424, y: 315.89328}
+        editorPosition: {x: 179.14217, y: -188.83728}
     - rid: 5949859324358295561
       type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
       data:
-        question: {fileID: 11400000, guid: db1b42d7f825a2c469a02ec171e94330, type: 2}
+        question: {fileID: 11400000, guid: d5191b626c20d7240b2a2dff312c16ad, type: 2}
         trueNode:
           rid: 5949859324358295563
         falseNode:
           rid: 5949859324358295562
         action: {fileID: 0}
-        editorPosition: {x: 268.5044, y: 315.89328}
+        editorPosition: {x: 532.2202, y: 40.455017}
     - rid: 5949859324358295562
       type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
       data:
@@ -57,18 +47,18 @@ MonoBehaviour:
           rid: -2
         falseNode:
           rid: -2
-        action: {fileID: 11400000, guid: 9a55dfe4d9f77b54bbd12b0545f3ad5d, type: 2}
-        editorPosition: {x: 405.47894, y: 488.41168}
+        action: {fileID: 11400000, guid: 0d9f9383ae8aa2143a5da55efe8e75cd, type: 2}
+        editorPosition: {x: 689.7409, y: 238.85136}
     - rid: 5949859324358295563
       type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
       data:
-        question: {fileID: 11400000, guid: fb96505197502984ca499b5d5040eece, type: 2}
+        question: {fileID: 11400000, guid: db1b42d7f825a2c469a02ec171e94330, type: 2}
         trueNode:
           rid: 5949859324358295564
         falseNode:
           rid: 5949859324358295565
         action: {fileID: 0}
-        editorPosition: {x: 108.98868, y: 479.74246}
+        editorPosition: {x: 348.77676, y: 228.8819}
     - rid: 5949859324358295564
       type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
       data:
@@ -77,8 +67,8 @@ MonoBehaviour:
           rid: -2
         falseNode:
           rid: -2
-        action: {fileID: 11400000, guid: bf129c3813ad6eb4da31ece748bed49c, type: 2}
-        editorPosition: {x: -41.7287, y: 653.40924}
+        action: {fileID: 11400000, guid: 3432756440a6cad4c9c782ab7548fc7f, type: 2}
+        editorPosition: {x: 175.45166, y: 428.59717}
     - rid: 5949859324358295565
       type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
       data:
@@ -87,5 +77,15 @@ MonoBehaviour:
           rid: -2
         falseNode:
           rid: -2
-        action: {fileID: 11400000, guid: 3432756440a6cad4c9c782ab7548fc7f, type: 2}
-        editorPosition: {x: 218.99857, y: 658.2668}
+        action: {fileID: 11400000, guid: 9a55dfe4d9f77b54bbd12b0545f3ad5d, type: 2}
+        editorPosition: {x: 475.28836, y: 434.1837}
+    - rid: 5949859401100165120
+      type: {class: DecisionNode, ns: DecisionTree, asm: Assembly-CSharp}
+      data:
+        question: {fileID: 0}
+        trueNode:
+          rid: -2
+        falseNode:
+          rid: -2
+        action: {fileID: 11400000, guid: bf129c3813ad6eb4da31ece748bed49c, type: 2}
+        editorPosition: {x: -130.69376, y: -8.76416}
